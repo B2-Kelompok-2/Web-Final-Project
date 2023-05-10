@@ -10,6 +10,7 @@
   Pada tampilan awal  website  terdapat halaman login, baik dari akun admin, user, dan manager. Apabila memilih login dengan akun admin lalu berhasil, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard admin.
 ![Screenshot (730)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1d721f8b-91f2-4c65-b8b0-410e0ea6c883)
 
-2. Dashboard Admin
-  Pada dashboard admin terdapat beberapa bagian menu yaitu data list pegawai dan data hewan, lalu terdapat market yang berisikan data antrian, transaksi, dan pengaduan.
+2. Menu Pegawai
+  Pada dashboard admin terdapat beberapa bagian menu yaitu data list pegawai dan data hewan, lalu terdapat market yang berisikan data antrian, transaksi, dan pengaduan. Pada 
 ![Screenshot (732)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e86bb3c6-d143-469f-a83d-4e82fd273b11)
+![Screenshot (734)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/cf330e8a-2212-49eb-a896-dcd6d56a11bb)
