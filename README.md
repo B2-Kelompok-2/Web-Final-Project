@@ -6,6 +6,20 @@
 
   Pada final project praktikum Web kali ini, kami mengambil tema peternakan dengan nama website “Agrotechfarm”. Dengan menggunakan end to end process atau menggambarkan proses yang mengambil sistem atau layanan dari awal hingga akhir dan memberikan solusi fungsional yang lengkap. Berikut tutorial website yang telah dibuat :
   
+   Pada proses login terdapat 3 role dan setiap role harus mengisi username dan password dengan benar agar dapat lanjut ke halaman berikutnya. Berikut username dan password yang tersedia :
+
+1. Admin
+username	: admin
+password	: admin 
+
+2. User
+username	: 
+password	: 
+
+3. Manager
+username	: 
+password	: 
+
 ![Screenshot (738)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/204244a1-af48-488b-840f-af8fa36e8bda)
 ![Screenshot (739)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1255ef9f-aacd-413f-a97a-41a6f6a29b9a)
 
