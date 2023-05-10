@@ -38,3 +38,6 @@ Selanjutnya menu data hewan, admin juga dapat menginput dan mengedit data hewan 
 
 Pada menu pemesanan, adminpun dapat menginput dan mengedit data pemesanan hewan sesuai dengan sub informasi yang tertera pada tabel seperti nama customer, nama hewan yang dipesan, tanggal & waktu pemesanan, dan status.   
 ![Screenshot (742)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/7f733ad3-6178-4212-a003-258467c96749)
+
+Sama seperti menu sebelumnya, pada menu pengaduan pesan customer berisikan list pesan customer. Mulai dari nama, email, no hp, dan isi pesan yang dingin disampaikan.
+![Screenshot (745)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/f746fa1a-4ece-4eb4-94a9-8cb319568768)
