@@ -31,7 +31,7 @@
 
  Pada menu pegawai, admin dapat menginput dan mengedit data pegawai sesuai dengan sub informasi yang telah tertera pada tabel seperti  username, nama, jenis kelamin, alamat, no hp, dan status.
 ![Screenshot (734)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/cf330e8a-2212-49eb-a896-dcd6d56a11bb)
-![Screenshot (728)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/3b2f2c79-16e6-4971-b5a3-85c056bedda4)
+![Screenshot (728)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/f2742e45-a71c-43f9-be82-bc028bcc2a54)
 
 Selanjutnya menu data hewan, admin juga dapat menginput dan mengedit data hewan sesuai dengan sub informasi yang tertera pada tabel seperti nama, deskripsi, dan harga.
 ![Screenshot (741)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/13a8e70c-ab2b-43c7-b317-65b09ffbf3a5)
