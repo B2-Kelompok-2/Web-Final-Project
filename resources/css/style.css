@@ -72,7 +72,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
   margin-left: 4px; }
 
 .bg-primary {
-  background-color: #6777ef !important; }
+  background-color: #cdd3d8  !important; }
 
 .bg-secondary {
   background-color: #cdd3d8 !important; }
@@ -723,7 +723,7 @@ select.form-control:not([size]):not([multiple]) {
     background-repeat: no-repeat;
     background-position: center; }
   .card.card-primary {
-    border-top: 2px solid #6777ef; }
+    border-top: 2px solid #AAC8A7; }
   .card.card-secondary {
     border-top: 2px solid #34395e; }
   .card.card-success {
@@ -1287,27 +1287,27 @@ h6 .badge {
   color: #fff !important; }
 
 .btn-info, .btn-info.disabled {
-  box-shadow: 0 2px 6px #82d3f8;
-  background-color: #3abaf4;
-  border-color: #3abaf4;
+  box-shadow: 0 2px 6px #C9DBB2;
+  background-color: #AAC8A7;
+  border-color: #AAC8A7;
   color: #fff; }
   .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active {
-    background-color: #0da8ee !important; }
+    background-color: #C9DBB2 !important; }
 
 .btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info.disabled:hover, .btn-outline-info.disabled:focus, .btn-outline-info.disabled:active {
-  background-color: #0da8ee !important;
+  background-color: #C9DBB2 !important;
   color: #fff !important; }
 
 .btn-primary, .btn-primary.disabled {
-  box-shadow: 0 2px 6px #acb5f6;
-  background-color: #6777ef;
-  border-color: #6777ef; }
+  box-shadow: 0 2px 6px #F6FFDE;
+  background-color: #AAC8A7;
+  border-color: #AAC8A7; }
   .btn-primary:focus, .btn-primary.disabled:focus {
-    background-color: #394eea !important; }
+    background-color: #AAC8A7 !important; }
     .btn-primary:focus:active, .btn-primary.disabled:focus:active {
-      background-color: #394eea !important; }
+      background-color: #AAC8A7 !important; }
   .btn-primary:active, .btn-primary:hover, .btn-primary.disabled:active, .btn-primary.disabled:hover {
-    background-color: #394eea !important; }
+    background-color: #C9DBB2 !important; }
 
 .btn-outline-primary, .btn-outline-primary.disabled {
   border-color: #6777ef;

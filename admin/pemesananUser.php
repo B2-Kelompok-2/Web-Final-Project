@@ -5,16 +5,17 @@ include 'template/header.php';
 
 $tgl = date("Y-m-d");
 
-if (!visible('admin|kasir', $data['status'])) {
+if (!visible('user', $data['status'])) {
     header('Location: dashboard.php');
 }
 
 function pemesanan($data = null)
 {
+    $user = $GLOBALS['data'];
     if (isset($data)) {
-        return mysqli_query($GLOBALS['db'], "SELECT * FROM pemesanan INNER JOIN user ON pemesanan.id_user = user.id_user INNER JOIN hewan ON pemesanan.id_hewan = hewan.id_hewan WHERE hewan.nama_hewan LIKE '%$data%'");
+        return mysqli_query($GLOBALS['db'], "SELECT * FROM pemesanan INNER JOIN hewan ON pemesanan.id_hewan = hewan.id_hewan WHERE hewan.nama_hewan LIKE '%$data%' AND pemesanan.id_user = $user[id_user]");
     }
-    return mysqli_query($GLOBALS['db'], "SELECT * FROM pemesanan INNER JOIN user ON pemesanan.id_user = user.id_user INNER JOIN hewan ON pemesanan.id_hewan = hewan.id_hewan");
+    return mysqli_query($GLOBALS['db'], "SELECT * FROM pemesanan INNER JOIN hewan ON pemesanan.id_hewan = hewan.id_hewan WHERE pemesanan.id_user = $user[id_user]");
 }
 
 $user = mysqli_query($db, "SELECT * FROM user WHERE status = 'user'");
@@ -48,6 +49,7 @@ function status($st, $s)
                                 <th scope="col">#</th>
                                 <th scope="col">Nama Customer</th>
                                 <th scope="col">Hewan</th>
+                                <th scope="col">Jumlah</th>
                                 <th scope="col">Tanggal</th>
                                 <th scope="col">Waktu</th>
                                 <th scope="col">Status</th>
@@ -59,24 +61,24 @@ function status($st, $s)
                             while ($d = mysqli_fetch_assoc($pemesanan)) : ?>
                                 <tr>
                                     <td class="align-middle"><?= $i ?></td>
-                                    <td class="align-middle"><?= $d['nama_user'] ?></td>
+                                    <td class="align-middle"><?= $data['nama_user'] ?></td>
                                     <td class="align-middle"><?= $d['nama_hewan'] ?></td>
+                                    <td class="align-middle"><?= $d['jumlah'] ?></td>
                                     <td class="align-middle"><?= $d['tanggal'] ?></td>
                                     <td class="align-middle"><?= $d['waktu'] ?></td>
                                     <td class="align-middle">
-                                        <select class="form-control status" name="status">
-                                            <option <?= status($d['status'], 'menunggu') ?> value="<?= $d['id_pemesanan'] ?> menunggu">Menunggu</option>
-                                            <option <?= status($d['status'], 'selesai') ?> value="<?= $d['id_pemesanan'] ?> selesai">Selesai</option>
-                                            <option <?= status($d['status'], 'batal') ?> value="<?= $d['id_pemesanan'] ?> batal">Batal</option>
-                                        </select>
+                                        <?= ucwords($d['status']) ?>
                                     </td>
                                     <td class="align-middle">
-                                        <button class="btn btn-danger btn-delete" value="<?= $d['id_pemesanan'] ?>">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                        <button class="btn btn-warning btn-update" value="<?= $d['id_pemesanan'] ?>">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
+                                        <?php if ($d['status'] == 'batal') : ?>
+                                            <button class="btn btn-danger btn-del" value="<?= $d['id_pemesanan'] ?>">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        <?php else : ?>
+                                            <button class="btn btn-danger btn-delete" value="<?= $d['id_pemesanan'] ?>">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                             <?php $i++;
@@ -136,31 +138,27 @@ function status($st, $s)
             $('#tanggal').val('<?= $tgl ?>');
         });
 
-
-        $('.btn-update').click(function() {
-            $('#modalTitle').html('Update Pemesanan')
-            $('#action').val('update')
-            $('#mobil').addClass('d-none');
-            var id = $(this).val()
-            $.ajax({
-                method: "GET",
-                url: controller,
-                data: {
-                    id: id
-                },
-                dataType: "json",
-                success: function(response) {
-                    hewan = parseInt(response['harga'])
-                    $.each(response, function(key, value) {
-                        $('#' + key).val(value);
-                    });
-                    $('.select2-selection__rendered').html($('#user option:selected').text());
-                    $('#harga').val(hewan)
-
-                    $('#modalForm').modal('show')
+        $('.btn-del').click(function() {
+            $('#confirm').modal('show')
+            let id = $(this).val()
+            $('.confirmation').click(function() {
+                if (Boolean($(this).val())) {
+                    $.ajax({
+                        url: $('#formAll').attr('action'),
+                        method: 'POST',
+                        data: {
+                            id: id,
+                            action: "del",
+                            form: $('#form').val()
+                        },
+                        success: function(response) {
+                            window.location = window.location;
+                        }
+                    })
+                } else {
+                    $('#confirm').modal('hide')
                 }
             })
-
         })
     })
 </script>

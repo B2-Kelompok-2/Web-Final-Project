@@ -52,7 +52,7 @@ if (!empty($_POST)) {
             setFlasher("Berhasil", "delete permanent hewan");
             break;
         default:
-            header('Location: isiKelolahewan.php');
+            header('Location: admin/dashboard.php');
             break;
     }
 }

@@ -4,8 +4,8 @@ $title = 'Nota';
 include 'template/header.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $transaksi = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM transaksi WHERE id_antrian = $id"));
-    $antrian = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM ((antrian INNER JOIN mobil ON antrian.no_plat = mobil.no_plat) INNER JOIN paket_pencucian ON antrian.id_paket = paket_pencucian.id_paket) WHERE antrian.id_antrian = $id"));
+    $transaksi = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM transaksi WHERE id_pemesanan = $id"));
+    $antrian = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM pemesanan INNER JOIN hewan ON pemesanan.id_hewan = hewan.id_hewan INNER JOIN user ON pemesanan.id_user = user.id_user WHERE pemesanan.id_pemesanan = $id"));
 }
 
 ?>
@@ -31,12 +31,12 @@ if (isset($_GET['id'])) {
                                     <div class="col-lg-8">
                                         <address>
                                             <strong>Customer :</strong><br>
-                                            <?= $antrian['nama_pemilik'] ?><br>
+                                            <?= $antrian['nama_user'] ?><br>
                                             <?= $antrian['no_plat'] ?><br>
                                         </address>
                                         <address>
-                                            <strong>Paket :</strong><br>
-                                            <?= ucwords($antrian['nama_paket']) ?><br>
+                                            <strong>Hewan :</strong><br>
+                                            <?= ucwords($antrian['nama_hewan']) ?><br>
                                         </address>
                                         <address>
                                             <strong>Tanggal :</strong><br>

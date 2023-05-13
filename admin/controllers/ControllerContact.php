@@ -11,4 +11,4 @@ if (!empty($_POST)) {
     mysqli_query($db, "INSERT INTO pesan VALUES ('', '$nama', '$email', '$no', '$msg')");
     setFlasher('Berhasil', 'kirim pesan');
 }
-header('location: ../../index.php');
+header('location: ../index.php');

@@ -7,29 +7,21 @@ if (!visible('admin|kasir', $data['status'])) {
     header('Location: dashboard.php');
 }
 
-// Ini untuk instant jalanin modal diawal ketika redirect dr pemesanan, sesuaikan aja, klw di km kan cmn pake/hewan, mobil mobil ilangin aja
-// if (!empty($_GET['id'])) {
-//     $id = $_GET['id'];
-//     $dt = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM pemesanan WHERE id_antrian = $id"));
+function transaksi($data = null)
+{
+    if (isset($data)) {
+        return mysqli_query($GLOBALS['db'], "SELECT * FROM transaksi INNER JOIN pemesanan ON pemesanan.id_pemesanan = transaksi.id_pemesanan INNER JOIN user WHERE pemesanan.id_user = user.id_user WHERE user.nama_user LIKE '%$data%'");
+    }
+    return mysqli_query($GLOBALS['db'], "SELECT * FROM transaksi INNER JOIN pemesanan ON pemesanan.id_pemesanan = transaksi.id_pemesanan INNER JOIN user WHERE pemesanan.id_user = user.id_user");
+}
 
-//     $tipe = $dt['tipe_mobil'];
-//     $ukr = mysqli_fetch_assoc(mysqli_query($db, "SELECT nama_hewan FROM hewan WHERE desc_paket = '$tipe'"));
-
-//     $ukr = $ukr['ukuran_mobil'];
-//     $dba = mysqli_fetch_assoc(mysqli_query($db, "SELECT biaya_tambahan FROM ukuran_mobil WHERE ukuran_mobil = '$ukr'"));
-
-//     $pkt = $dt['id_paket'];
-//     $dbp = mysqli_fetch_assoc(mysqli_query($db, "SELECT harga_paket FROM paket_pencucian WHERE id_paket = $pkt"));
-
-//     $biaya = $dba['biaya_tambahan'] + $dbp['harga_paket'];
-// }
+$transaksi = transaksi($_GET['search']);
 
 // Otomatis Nomor Nota
-$nota = date("Ymd") . (mysqli_num_rows(mysqli_query($db, "SELECT * FROM transaksi")) + 1);
+$nota = date("Ymd") . (mysqli_num_rows(mysqli_query($db, "SELECT * FROM pemesanan")) + 1);
 
 // ini dikasus mu jadi pemesanan
-$antrian = mysqli_query($db, "SELECT id_antrian, id_hewan FROM antrian WHERE status = 'selesai'");
-
+$pemesanan = mysqli_query($db, "SELECT id_pemesanan, nama_user FROM pemesanan INNER JOIN user ON pemesanan.id_user = user.id_user WHERE pemesanan.status = 'selesai'");
 ?>
 <div class="main-wrapper main-wrapper-1">
     <?php include 'template/navbar.php'; ?>
@@ -72,8 +64,7 @@ $antrian = mysqli_query($db, "SELECT id_antrian, id_hewan FROM antrian WHERE sta
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">No Plat</th>
-                                <th scope="col">Grup Pencuci </th>
+                                <th scope="col">Nama User</th>
                                 <th scope="col">Nomor Nota</th>
                                 <th scope="col">Biaya</th>
                                 <th scope="col">Extra Biaya</th>
@@ -86,17 +77,16 @@ $antrian = mysqli_query($db, "SELECT id_antrian, id_hewan FROM antrian WHERE sta
                             while ($d = mysqli_fetch_assoc($transaksi)) : ?>
                                 <tr>
                                     <td class="align-middle"><?= $i ?></td>
-                                    <td class="align-middle"><?= $d['no_plat'] ?></td>
-                                    <td class="align-middle"><?= $d['nama_group'] ?></td>
+                                    <td class="align-middle"><?= $d['nama_user'] ?></td>
                                     <td class="align-middle"><?= $d['no_nota'] ?></td>
                                     <td class="align-middle"><?= $d['biaya'] ?></td>
                                     <td class="align-middle"><?= $d['extra_biaya'] ?></td>
                                     <td class="align-middle"><?= $d['total_bayar'] ?></td>
                                     <td class="align-middle">
-                                        <button class="btn btn-danger btn-delete my-2" value="<?= $d['id_antrian'] ?>">
-                                            <i class="fas fa-times"></i>
+                                        <button class="btn btn-danger btn-del my-2" value="<?= $d['id_pemesanan'] ?>">
+                                            <i class="fas fa-trash"></i>
                                         </button>
-                                        <a href="nota.php?id=<?= $d['id_antrian'] ?>" class="btn btn-info btn-update my-2">
+                                        <a href="nota.php?id=<?= $d['id_pemesanan'] ?>" class="btn btn-info btn-update my-2">
                                             <i class="fas fa-print"></i>
                                         </a>
                                     </td>
@@ -159,7 +149,7 @@ $antrian = mysqli_query($db, "SELECT id_antrian, id_hewan FROM antrian WHERE sta
         });
 
         // Nah ini ajax buat ambil biaya antrian ketika selectnya diubah jd pemesanan
-        $('#antrian').change(function(e) {
+        $('#pemesanan').change(function(e) {
             e.preventDefault()
             $.ajax({
                 method: "GET",
@@ -215,7 +205,29 @@ $antrian = mysqli_query($db, "SELECT id_antrian, id_hewan FROM antrian WHERE sta
                     $('#modalForm').modal('show')
                 }
             })
+        })
 
+        $('.btn-del').click(function() {
+            $('#confirm').modal('show')
+            let id = $(this).val()
+            $('.confirmation').click(function() {
+                if (Boolean($(this).val())) {
+                    $.ajax({
+                        url: $('#formAll').attr('action'),
+                        method: 'POST',
+                        data: {
+                            id: id,
+                            action: "del",
+                            form: $('#form').val()
+                        },
+                        success: function(response) {
+                            window.location = window.location;
+                        }
+                    })
+                } else {
+                    $('#confirm').modal('hide')
+                }
+            })
         })
     })
 </script>

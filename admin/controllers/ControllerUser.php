@@ -15,7 +15,7 @@ if ($_GET['logout']) {
 
 if (!empty($_POST)) {
     if (isset($_POST['id'])) {
-        $id = $_POST['id'];
+        $id = mysqli_real_escape_string($db, $_POST['id']);
         $name = $_POST['name'];
         $no = $_POST['no'];
         $username = $_POST['username'];
@@ -33,7 +33,7 @@ if (!empty($_POST)) {
         header('Location: ../dashboard.php');
         die();
     } else {
-        $username = $_POST['username'];
+        $username = mysqli_real_escape_string($db, $_POST['username']);
         $password = md5($_POST['password']);
         $data = mysqli_fetch_assoc(mysqli_query($db, "SELECT * FROM user WHERE username = '$username' AND password = '$password' AND status_data = '1'"));
         if (isset($data)) {

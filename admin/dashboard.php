@@ -2,9 +2,9 @@
 include 'init.php';
 $title = 'Dashboard';
 $karyawan = mysqli_num_rows(mysqli_query($db, "SELECT id_user FROM user"));
-$pemesanan = mysqli_num_rows(mysqli_query($db, "SELECT id_antrian FROM pemesanan"));
-$transaksi = mysqli_num_rows(mysqli_query($db, "SELECT id_antrian FROM transaksi"));
-$pendapatan = mysqli_fetch_assoc(mysqli_query($db, "SELECT SUM(biaya), SUM(extra_biaya) FROM transaksi WHERE status_data = '1'"));
+$pemesanan = mysqli_num_rows(mysqli_query($db, "SELECT id_pemesanan FROM pemesanan"));
+$transaksi = mysqli_num_rows(mysqli_query($db, "SELECT id_pemesanan FROM transaksi"));
+$pendapatan = mysqli_fetch_assoc(mysqli_query($db, "SELECT SUM(biaya), SUM(extra_biaya) FROM transaksi"));
 $pendapatan = $pendapatan['SUM(biaya)'] + $pendapatan['SUM(extra_biaya)'] + 0;
 ?>
 <?php include 'template/header.php' ?>

@@ -3,7 +3,7 @@ session_start();
 include 'database/database.php';
 include 'config/flasher.php';
 
-function paket()
+function hewan()
 {
     return mysqli_query($GLOBALS['db'], "SELECT * FROM hewan");
 }
@@ -17,9 +17,9 @@ function antrian()
 // $noa = mysqli_num_rows(antrian());
 // $merk = mysqli_query($db, "SELECT * FROM merk_mobil");
 // $tipe = mysqli_query($db, "SELECT * FROM tipe_mobil");
-$paket = paket();
-$pkt = paket();
-$pktc = paket();
+$hewan = hewan();
+$pkt = hewan();
+$pktc = hewan();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,12 +61,11 @@ $pktc = paket();
                 </h1>
                 <br>
                 <div align="center">
-                    <button type="button" id="btnmd" class="btn btn-primary text-dark">Antri Sekarang!</button>
-                    <button type="button" id="crant" class="btn btn-primary text-dark">Check Antri</button>
+                    <button type="button" id="register" class="btn btn-primary text-light">Daftar Sekarang!</button>
                 </div>
                 <br>
                 <div align="center">
-                    <button type="button" id="crant" class="btn btn-primary text-dark" href="admin/index.php"><a href="admin/index.php" style="color: black; text-decoration: none;">Masuk Sebagai Pegawai</a></button>
+                    <button type="button" id="crant" class="btn btn-primary text-light" href="admin/index.php"><a href="admin/index.php" style="color: white; text-decoration: none;">Masuk untuk memesan</a></button>
                 </div>
                 <br><br>
 
@@ -121,18 +120,18 @@ $pktc = paket();
                     </div>
                     <!-- <div class='row mt-4 d-flex justify-content-center'>
                             <div class="col-4" data-aos="zoom-in"> -->
-                                <div class="container-paket">
-                                    <div class="paket-sapi">
-                                        <img src="resources/img/cow.gif" alt="" width="100">
-                                    </div>
-                                    <div class="paket-kambing">
-                                        <img src="resources/img/goat.gif" alt="" width="100">
-                                    </div>
-                                    <div class="paket-ayam">
-                                        <img src="resources/img/hen.gif" alt="" width="100"> 
-                                    </div>
-                                </div>
-                            <!-- </div> -->
+                    <div class="container-hewan">
+                        <div class="hewan-sapi">
+                            <img src="resources/img/cow.gif" alt="" width="100">
+                        </div>
+                        <div class="hewan-kambing">
+                            <img src="resources/img/goat.gif" alt="" width="100">
+                        </div>
+                        <div class="hewan-ayam">
+                            <img src="resources/img/hen.gif" alt="" width="100">
+                        </div>
+                    </div>
+                    <!-- </div> -->
                     <!-- </div> -->
                     <div class="col-lg" data-aos="zoom-in">
                     </div>
@@ -159,114 +158,50 @@ $pktc = paket();
                 </div>
         </section>
     </div>
-    <div class="modal modal-xl" id="cariAntrian" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-2" id="exampleModalToggleLabel">Data Antrian</h1>
-                </div>
-                <div class="modal-body modal-dialog-scrollable row m-0 p-0">
-                    <div class="col-12 mb-3">
-                        <div class="form-group">
-                            <label for="search" class="form-label">Masukan No Plat</label>
-                            <input class="form-control" type="text" name="search" id="search" maxlength="20">
-                            <div id="pwindicator" class="pwindicator">
-                                <div id="pwindicate" class="label text-danger"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="result" class="col-12 row mt-2 d-none m-0 p-0">
-                        <div class="col-12 mb-3">
-                            <label for="plt" class="form-label">No Plat</label>
-                            <input id="plt" class="form-control" disabled>
-                        </div>
-                        <div class="col-6 mb-3">
-                            <label for="pkt" class="form-label">Nama Paket</label>
-                            <input id="pkt" class="form-control" disabled>
-                        </div>
-                        <div class="col-6 mb-3">
-                            <label for="ant" class="form-label">No Antrian</label>
-                            <input id="ant" class="form-control" disabled>
-                        </div>
-                        <div class="col-12">
-                            <label for="sta" class="form-label">Status</label>
-                            <input id="sta" class="form-control" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-cancel" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal modal-xl" id="tambahAntrian" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal modal-xl" id="registrasi" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-2" id="exampleModalToggleLabel">Daftar</h1>
                 </div>
-                <form method="POST" id="formAntrian">
+                <form method="POST" action="admin/controllers/ControllerRegister.php">
                     <div class="modal-body modal-dialog-scrollable m-0">
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
-                            <input maxlength="50" type="text" class="form-control" autoComplete="off" name="nama" id="nama" required>
+                            <input type="text" class="form-control" name="nama" id="nama" maxlength="20" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username" id="username" maxlength="20" required>
+                        </div>
+                        <div id="pws" class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" maxlength="20" required>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col-8">
+                                <label for="alamat" class="form-label">Alamat</label>
+                                <textarea type="text" class="form-control" name="alamat" id="alamat" maxlength="80" required></textarea>
+                            </div>
+                            <div class="col">
+                                <label for="jenis-kelamin" class="form-label">Jenis Kelamin</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="jk" id="p" value="P" required>
+                                    <label class="form-check-label" for="p">
+                                        Perempuan
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="jk" id="l" value="L">
+                                    <label class="form-check-label" for="l">
+                                        Laki-Laki
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="no" class="form-label">Nomor HP</label>
-                            <input type="number" min="0" class="form-control" autoComplete="off" name="no" id="no" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="14" required>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="plat" class="form-label">Nomor plat</label>
-                                <input maxlength="12" type="text" class="form-control" autoComplete="off" name="plat" id="plat" required>
-                            </div>
-                            <div class="col">
-                                <label for="merk" class="form-label">Merk Mobil</label>
-                                <select type="text" class="form-control select2" data-width="100%" name="merk" id="merk" required />
-                                <option selected disabled>Pilih Merk</option>
-                                <?php while ($d = mysqli_fetch_assoc($merk)) : ?>
-                                    <option value="<?= ucFirst($d['merk_mobil']) ?>"><?= ucFirst($d['merk_mobil']) ?></option>
-                                <?php endwhile; ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="tipe" class="form-label">Tipe Mobil</label>
-                                <select type="text" class="form-control select2" data-width="100%" name="tipe" id="tipe" required />
-                                <option selected disabled>Pilih Tipe</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label for="ukuran" class="form-label">Ukuran</label>
-                                <input class="form-control" name="ukuran" id="ukuran" disabled>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="paket" class="form-label">Paket Pencucian</label>
-                                <select class="form-control" name="paket" id="paket" required>
-                                    <option value="" selected disabled>Pilih Paket</option>
-                                    <?php while ($d = mysqli_fetch_assoc($paket)) : ?>
-                                        <option value="<?= $d['id_paket'] ?>"><?= ucWords($d['nama_paket']) ?></option>
-                                    <?php endwhile; ?>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label for="harga" class="form-label">Biaya Biaya Pencucian</label>
-                                <input type="number" name="harga" class="form-control" id="harga" disabled value="0">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label for="tanggal" class="form-label">Tanggal Antrian</label>
-                                <input id="tanggal" type="text" class="form-control" disabled value="<?= $tgl = date("Y-m-d"); ?>" required>
-                            </div>
-                            <div class="col">
-                                <label for="no" class="form-label">No Antrian</label>
-                                <input id="no" type="text" class="form-control" disabled value="<?= (mysqli_num_rows(mysqli_query($db, "SELECT id_antrian from antrian WHERE tanggal = '$tgl'")) + 1) ?>" required>
-                            </div>
+                            <input type="number" class="form-control" name="no" id="no" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="14" required>
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-between">
@@ -312,111 +247,9 @@ $pktc = paket();
         $(document).ready(function() {
             <?php Flash() ?>
 
-            var biaya = 0;
-            var paket = 0;
-            var controller = 'admin/controllers/ControllerHome.php'
-
-            $('#btnmd').click(function(e) {
-                $('#tambahAntrian').modal('show')
-            });
-
-            $('#crant').click(function(e) {
-                $('#cariAntrian').modal('show')
-            });
-
-            $('#search').change(function(e) {
-                $.ajax({
-                    url: controller,
-                    method: 'GET',
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    success: function(response) {
-                        if (response['plt']) {
-                            $('#pwindicate').html(" ");
-                            $('#result').removeClass('d-none');
-                            $.each(response, function(key, value) {
-                                $('#' + key).val(value);
-                            });
-                        } else {
-                            $('#result').addClass('d-none');
-                            $('#pwindicate').html("Data antrian tidak ada");
-                        }
-                    }
-                })
-            });
-
-            $('#plat').on('change', function(e) {
-                $.ajax({
-                    url: controller,
-                    method: 'GET',
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    success: function(response) {
-                        biaya = parseInt(response['biaya'])
-                        $.each(response, function(key, value) {
-                            $('#' + key).val(value);
-                        });
-                        $('#harga').val(biaya + paket)
-                    },
-                })
-            })
-
-            $('#merk').on('change', function(e) {
-                $.ajax({
-                    url: controller,
-                    method: 'GET',
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    success: function(response) {
-                        $('#tipe').html('<option selected disabled> Pilih Tipe </option>')
-                        $.each(response['tipe'], function(i, item) {
-                            $('#tipe').append($('<option>', {
-                                value: item,
-                                text: item
-                            }));
-                        });
-                    }
-                })
-            })
-
-            $('#tipe').on('change', function(e) {
-                $.ajax({
-                    url: controller,
-                    method: 'GET',
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    success: function(response) {
-                        biaya = parseInt(response['biaya'])
-                        console.log(response)
-                        $('#ukuran').val(response['ukuran'])
-                        $('#harga').val(biaya + paket)
-                    }
-                })
-            })
-
-            $('#paket').on('change', function(e) {
-                $.ajax({
-                    url: controller,
-                    method: 'GET',
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    success: function(response) {
-                        paket = parseInt(response['harga'])
-                        $('#harga').val(biaya + paket)
-                    }
-                })
-            })
-
-            $('#formAntrian').submit(function(e) {
-                e.preventDefault();
-                $.ajax({
-                    method: $(this).attr('method'),
-                    url: controller,
-                    data: $(this).serialize(),
-                    success: function(response) {
-                        window.location = window.location
-                    }
-                });
+            $('#register').click(function (e) { 
+                $('#registrasi').modal('show')
+                
             });
         })
     </script>
