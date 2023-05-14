@@ -12,14 +12,13 @@
 (username	: admin, password	: admin)
 
 2. User
-(username	: , password	: )
+(username	: bayu, password : bayu )
 
 3. Manager
-(username	: , password	: )
+(username	: user , password	: user )
 
-![Screenshot (738)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/204244a1-af48-488b-840f-af8fa36e8bda)
-![Screenshot (739)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1255ef9f-aacd-413f-a97a-41a6f6a29b9a)
-
+![Screenshot (754)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/5a74d2c4-70ac-4b90-87d4-7c7ef5fe081a)
+![Screenshot (755)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/46cb46d2-6beb-47c0-9278-ce6ba7cbb190)
 
 ## Login Admin
   Pada tampilan awal  website  terdapat halaman login, baik dari akun admin, user, dan manager. Apabila memilih login dengan akun admin lalu berhasil, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard admin.
