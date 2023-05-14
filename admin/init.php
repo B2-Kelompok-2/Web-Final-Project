@@ -8,7 +8,7 @@ if (!$_SESSION['login']) {
     header('Location: index.php');
 }
 
-$data = mysqli_fetch_assoc(mysqli_query($db, "SELECT nama_user, status, username, no_user FROM user WHERE id_user = '" . $_SESSION['id'] . "'"));
+$data = mysqli_fetch_assoc(mysqli_query($db, "SELECT nama_user, status, username, no_user, id_user FROM user WHERE id_user = '" . $_SESSION['id'] . "'"));
 
 function visible($role, $user) {
     $role = explode('|', $role);

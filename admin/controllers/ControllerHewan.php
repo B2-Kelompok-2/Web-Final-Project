@@ -27,11 +27,6 @@ if (!empty($_POST)) {
             mysqli_query($db, $sql);
             setFlasher("Berhasil", "Tambah Hewan", "success");
             break;
-        case 'delete':
-            $id = $_POST['id'];
-            mysqli_query($db, "UPDATE hewan SET WHERE id_hewan = '$id'");
-            setFlasher("Berhasil", "hapus hewan");
-            break;
         case 'update':
             $id = $_POST['id'];
             $nama = $_POST['nama'];
@@ -46,13 +41,13 @@ if (!empty($_POST)) {
             mysqli_query($db, "UPDATE hewan SET status_data = '1' WHERE id_hewan = '$id'");
             setFlasher("Berhasil", "restore hewan");
             break;
-        case 'del':
+        case 'delete':
             $id = $_POST["id"];
             mysqli_query($db, "DELETE FROM hewan WHERE id_hewan = '$id'");
             setFlasher("Berhasil", "delete permanent hewan");
             break;
         default:
-            header('Location: isiKelolahewan.php');
+            header('Location: admin/dashboard.php');
             break;
     }
 }

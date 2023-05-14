@@ -77,63 +77,6 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                    <!-- <?php //if (thisPage() == 'mobilCustomer.php') : ?> -->
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama</label>
-                            <input maxlength="50" type="text" class="form-control" autoComplete="off" name="nama" id="nama" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="no" class="form-label">Nomor HP</label>
-                            <input type="number" min="0" class="form-control" autoComplete="off" name="no" id="no" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="14" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="plat" class="form-label">Nomor plat</label>
-                            <input maxlength="12" type="text" class="form-control" autoComplete="off" name="plat" id="plat" required>
-                        </div>
-                        <div class="mb-3 row">
-                            <div class="col">
-                                <label for="merk" class="form-label">Merk Mobil</label>
-                                <select type="text" class="form-control select2" data-width="100%" name="merk" id="merk" required />
-                                <option selected disabled>Pilih Merk</option>
-                                <?php while ($d = mysqli_fetch_assoc($merk)) : ?>
-                                    <option value="<?= ucFirst($d['merk_mobil']) ?>"><?= ucFirst($d['merk_mobil']) ?></option>
-                                <?php endwhile; ?>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label for="tipe" class="form-label">Tipe Mobil</label>
-                                <select type="text" class="form-control select2" data-width="100%" name="tipe" id="tipe" required />
-                                <option selected disabled>Pilih Tipe</option>
-                                </select>
-                            </div>
-                        </div>
-                    <?php //endif; ?>
-                    <?php if (thisPage() == 'mobil.php') : ?>
-                        <div class="mb-3">
-                            <label for="merk" class="form-label">Merk Mobil</label>
-                            <input type="text" class="form-control" autoComplete="off" list="merkM" name="merk" id="merk" required maxlength="20" />
-                            <datalist id="merkM">
-                                <?php while ($d = mysqli_fetch_assoc($merkM)) : ?>
-                                    <option value="<?= ucFirst($d['merk_mobil']) ?>">
-                                    <?php endwhile; ?>
-                            </datalist>
-                        </div>
-                        <div class="mb-3 row" id="tu">
-                            <div class="col">
-                                <label for="tipe" class="form-label">Tipe Mobil</label>
-                                <input type="text" class="form-control" autoComplete="off" name="tipe" id="tipe" required maxlength="20" />
-                            </div>
-                            <div class="col">
-                                <label for="ukuran" class="form-label">Ukuran Mobil</label>
-                                <select type="text" class="form-control" data-width="100%" name="ukuran" id="ukuran" required />
-                                <option value="" selected disabled>Pilih Ukuran</option>
-                                <option value="kecil">Kecil</option>
-                                <option value="sedang">Sedang</option>
-                                <option value="Besar">Besar</option>
-                                </select>
-                            </div>
-                        </div>
-                    <?php endif; ?>
                     <?php if (thisPage() == 'hewan.php') : ?>
                         <div class="mb-3">
                             <label for="nama" class="form-label">Jenis Hewan</label>
@@ -148,39 +91,21 @@
                             <input type="number" min="0" class="form-control" autoComplete="off" name="harga" id="harga" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="14" required>
                         </div>
                     <?php endif; ?>
-
-                    <?php if (thisPage() == 'pemesanan.php') : ?>
-                        <span id="mobil">
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label for="plat" class="form-label">ID USER</label>
-                                    <select type="text" class="form-control select2" data-width="100%" name="plat" id="plat" required />
-                                    <option selected disabled>Pilih Merk</option>
-                                    <?php while ($d = mysqli_fetch_assoc($user)) : ?>
-                                        <option value="<?= ucwords($d['id_user']) ?>"><?= ucwords($d['nama_user']) ?></option>
-                                    <?php endwhile; ?>
-                                    </select>
-                               
-                                <div class="col">
-                                    <label for="ukuran" class="form-label">Ukuran</label>
-                                    <select class="form-control" name="ukuran" id="ukuran" disabled>
-                                        <option value="" selected disabled>Pilih Hewan</option>
-                                        <option value="besar">Sapi</option>
-                                        <option value="sedang">Kambing</option>
-                                        <option value="kecil">Domba</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </span>
+                    <?php if (thisPage() == 'pemesananUser.php') : ?>
+                        <div class="mb-3">
+                            <input type="hidden" name="user" value="<?= $data['id_user'] ?>">
+                            <label for="hewan" class="form-label">Hewan</label>
+                            <select class="form-control" name="hewan" id="hewan">
+                                <option selected disabled>Pilih Hewan</option>
+                                <?php while ($d = mysqli_fetch_assoc($hewan)) : ?>
+                                    <option value="<?= ucwords($d['id_hewan']) ?>"><?= ucwords($d['nama_hewan']) ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <label for="paket" class="form-label">Hewan </label>
-                                <select class="form-control" name="paket" id="paket" required>
-                                    <option value="" selected disabled>Pilih Hewan</option>
-                                    <?php while ($d = mysqli_fetch_assoc($hewan)) : ?>
-                                        <option value="<?= $d['id_hewan'] ?>"><?= ucWords($d['nama_hewan']) ?></option>
-                                    <?php endwhile; ?>
-                                </select>
+                                <label for="jumlah" class="form-label">Jumlah</label>
+                                <input type="number" id="jumlah" name="jumlah" class="form-control" placeholder="Jumlah Hewan">
                             </div>
                             <div class="col">
                                 <label for="harga" class="form-label">Harga</label>
@@ -189,7 +114,46 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <label for="tanggal" class="form-label">Tanggal Antrian</label>
+                                <label for="tanggal" class="form-label">Tanggal Pemesanan</label>
+                                <input id="tanggal" type="text" class="form-control" disabled value="<?= $tgl ?>" required>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (thisPage() == 'pemesanan.php') : ?>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="plat" class="form-label">User</label>
+                                <select type="text" class="form-control select2" data-width="100%" name="user" id="user" required />
+                                <option selected disabled>Pilih User</option>
+                                <?php while ($d = mysqli_fetch_assoc($user)) : ?>
+                                    <option value="<?= ucwords($d['id_user']) ?>"><?= ucwords($d['nama_user']) ?></option>
+                                <?php endwhile; ?>
+                                </select>
+                            </div>
+
+                            <div class="col">
+                                <label for="hewan" class="form-label">Hewan</label>
+                                <select class="form-control" name="hewan" id="hewan">
+                                    <option selected disabled>Pilih Hewan</option>
+                                    <?php while ($d = mysqli_fetch_assoc($hewan)) : ?>
+                                        <option value="<?= ucwords($d['id_hewan']) ?>"><?= ucwords($d['nama_hewan']) ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="jumlah" class="form-label">Jumlah</label>
+                                <input type="number" id="jumlah" name="jumlah" class="form-control" placeholder="Jumlah Hewan">
+                            </div>
+                            <div class="col">
+                                <label for="harga" class="form-label">Harga</label>
+                                <input type="number" name="harga" class="form-control" id="harga" disabled value="0">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="tanggal" class="form-label">Tanggal Pemesanan</label>
                                 <input id="tanggal" type="text" class="form-control" disabled value="<?= $tgl ?>" required>
                             </div>
                         </div>
@@ -199,25 +163,14 @@
                             <label for="nota" class="form-label">No. Nota</label>
                             <input type="text" class="form-control" name="nota" id="nota" readonly value="<?= $nota ?>">
                         </div>
-                        <div class="mb-3 row">
-                            <div class="col">
-                                <label for="antrian" class="form-label">Antrian</label>
-                                <select class="form-control" name="antrian" id="antrian" required>
-                                    <option selected disabled>Pilih Transaksi</option>
-                                    <?php while ($p = mysqli_fetch_assoc($antrian)) : ?>
-                                        <option value="<?= $p['id_antrian'] ?>"><?= $p['no_plat'] ?></option>
-                                    <?php endwhile; ?>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <label for="group" class="form-label">Group Pencuci</label>
-                                <select class="form-control" name="group" id="group" required>
-                                    <option selected disabled>Pilih Group</option>
-                                    <?php while ($p = mysqli_fetch_assoc($group)) : ?>
-                                        <option value="<?= $p['id_group'] ?>"><?= $p['nama_group'] ?></option>
-                                    <?php endwhile; ?>
-                                </select>
-                            </div>
+                        <div class="mb-3">
+                            <label for="pemesanan" class="form-label">Pemesanan</label>
+                            <select class="form-control" name="pemesanan" id="pemesanan" required>
+                                <option selected disabled>Pilih Pemesanan</option>
+                                <?php while ($p = mysqli_fetch_assoc($pemesanan)) : ?>
+                                    <option value="<?= $p['id_pemesanan'] ?>"><?= $p['nama_user'] ?></option>
+                                <?php endwhile; ?>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="bayar" class="form-label">Bayar</label>

@@ -81,6 +81,28 @@ $hewan = hewan($_GET['search']);
             $('#modalForm').modal('show')
         });
 
+        $('.btn-delete').click(function() {
+            $('#confirm').modal('show')
+            let id = $(this).val()
+            $('.confirmation').click(function() {
+                if (Boolean($(this).val())) {
+                    $.ajax({
+                        url: $('#formAll').attr('action'),
+                        method: 'POST',
+                        data: {
+                            id: id,
+                            action: "delete",
+                            form: $('#form').val()
+                        },
+                        success: function(response) {
+                            window.location = window.location;
+                        }
+                    })
+                } else {
+                    $('#confirm').modal('hide')
+                }
+            })
+        })
 
         $('.btn-update').click(function() {
             $('#modalTitle').html('Update Hewan')
@@ -101,7 +123,6 @@ $hewan = hewan($_GET['search']);
                     $('#modalForm').modal('show')
                 }
             })
-
         })
     })
 </script>
