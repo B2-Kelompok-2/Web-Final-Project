@@ -13,7 +13,7 @@ function pemesanan($data = null)
 {
     $user = $GLOBALS['data'];
     if (isset($data)) {
-        return mysqli_query($GLOBALS['db'], "SELECT * FROM pemesanan INNER JOIN hewan ON pemesanan.id_hewan = hewan.id_hewan WHERE hewan.nama_hewan LIKE '%$data%' AND pemesanan.id_user = $user[id_user]");
+        return mysqli_query($GLOBALS['db'], "SELECT * FROM pemesanan INNER JOIN hewan ON pemesanan.id_hewan = hewan.id_hewan WHERE hewan.nama_hewan LIKE '%$data%'");
     }
     return mysqli_query($GLOBALS['db'], "SELECT * FROM pemesanan INNER JOIN hewan ON pemesanan.id_hewan = hewan.id_hewan WHERE pemesanan.id_user = $user[id_user]");
 }
