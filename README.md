@@ -11,17 +11,17 @@
 1. Admin 
 (username	: admin, password	: admin)
 
-2. User
-(username	: bayu, password : bayu )
+2. Manager
+(username	: user , password	: user ) 
 
-3. Manager
-(username	: user , password	: user )
+3. User
+(username	: bayu, password : bayu )
 
 ![Screenshot (754)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/5a74d2c4-70ac-4b90-87d4-7c7ef5fe081a)
 ![Screenshot (755)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/46cb46d2-6beb-47c0-9278-ce6ba7cbb190)
 
 ## Login Admin
-  Pada tampilan awal  website  terdapat halaman login, baik dari akun admin, user, dan manager. Apabila memilih login dengan akun admin lalu berhasil, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard admin.
+  Pada tampilan awal  website  terdapat halaman login, baik dari akun admin, user, dan manager. Pada login pertama kita menggunakan akun admin terlebih dahulu. Apabila telah berhasil, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard admin. berikut tampilannya :
 ![Screenshot (730)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1d721f8b-91f2-4c65-b8b0-410e0ea6c883)
 
 ## Dashboard Admin
@@ -48,5 +48,20 @@ Sama seperti menu sebelumnya, admin dapat menginput, mengedit, serta menghapus d
 ![nota pembayaran](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/fd0ca725-f084-41dd-bdc7-b75e4e51ecef)
 ![tambah transaksi](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e60d846e-86e3-484f-9968-84dbd2f2efc4)
 
-## Login User
-  Pada tampilan awal  website  terdapat halaman login, baik dari akun admin, user, dan manager. Apabila memilih login dengan akun admin lalu berhasil, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard admin.
+## Login Manager
+  Pada tampilan awal  website  terdapat halaman login manager. Apabila telah berhasil, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard manager. berikut tampilannya :
+![login manager](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/f0ce560c-214f-428f-a99f-372cae939894)
+
+
+## Dashboard Manager
+Pada tampilan dashboard manager terdapat tampilan jumlah total pengguna, pemesanan, transaksi, dan total pendapatan. Sedangkan menu yang ada pada akun manager hanya data list pegawai dan data hewan.
+![dashboard manager](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/6b5ec4fc-a70e-4e36-92e6-b720e4500f34)
+
+ Pada menu data pegawai, manager dapat menginput dan mengedit data pegawai sesuai dengan sub informasi yang telah tertera pada tabel seperti username, nama, jenis kelamin, alamat, no hp, dan status.
+ ![menu user - data pegawai](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/5397ac4c-148b-4498-adeb-18e3eb7e6c15)
+![menu user - tambah pegawai](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e2234ae0-a011-45d3-854e-11ee83c6af31)
+![menu manager - update pegawai](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/a47467ed-5419-4997-9801-c34e1b004515)
+
+
+
+ 
