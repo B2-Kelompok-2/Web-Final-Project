@@ -49,9 +49,8 @@ Sama seperti menu sebelumnya, admin dapat menginput, mengedit, serta menghapus d
 ![tambah transaksi](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e60d846e-86e3-484f-9968-84dbd2f2efc4)
 
 ## Login Manager
-  Pada tampilan awal  website  terdapat halaman login manager. Apabila telah berhasil, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard manager. berikut tampilannya :
+  Pada tampilan awal  website, kita masuk sebagai manager. Apabila telah berhasil masuk, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard manager. Berikut tampilannya :
 ![login manager](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/f0ce560c-214f-428f-a99f-372cae939894)
-
 
 ## Dashboard Manager
 Pada tampilan dashboard manager terdapat tampilan jumlah total pengguna, pemesanan, transaksi, dan total pendapatan. Sedangkan menu yang ada pada akun manager hanya data list pegawai dan data hewan.
@@ -67,5 +66,12 @@ Selanjutnya menu data hewan pada akun manager yang berisikan kolom nama, descrip
 ![menu manager - tambah hewan](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1abb3912-b3d5-439a-8a0f-a7a401b8beb3)
 ![menu manager - update hewan](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/37b13a3f-b937-4294-96d4-e787468aa3c1)
 
-
+## Login User
+  Pada tampilan awal website, kita masuk sebagai user yaitu Budi. Apabila telah berhasil masuk, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard user. Berikut tampilannya :
+ ![login user](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/b1746fe0-37bb-4e09-8010-98dfe5a03c53)
  
+ ## Dashboard User
+Pada tampilan dashboard user terdapat tampilan jumlah total pengguna, pemesanan, transaksi, dan total pendapatan. Sedangkan menu yang ada pada akun user terdapat data list data hewan dan market yang berisi pemesanan dan transaksi. 
+ ![dashboard user](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/212b2459-d5e8-4018-a9a0-c33d4412a8fa)
+
+
