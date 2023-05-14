@@ -25,11 +25,11 @@
 ![Screenshot (730)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1d721f8b-91f2-4c65-b8b0-410e0ea6c883)
 
 ## Menu Admin
-  Pada dashboard admin terdapat beberapa bagian menu yaitu data list pegawai dan data hewan, lalu terdapat market yang berisikan data antrian, transaksi, dan pengaduan.
+  Pada dashboard admin terdapat beberapa bagian menu yaitu data list pegawai dan data hewan, lalu terdapat market yang berisikan pemesanan dan transaksi.
 ![menu admin](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/8f6e4ef4-804a-4448-bc3a-0cdf29a9f999)
 
  Pada menu admin, dapat melakukan input dan edit data pegawai sesuai dengan sub informasi yang telah tertera pada tabel seperti username, nama, jenis kelamin, alamat, no hp, dan status.
-![Screenshot (734)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/cf330e8a-2212-49eb-a896-dcd6d56a11bb)
+![menu pegawai](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/4f910ea1-1c7a-4b7f-8073-63e3bd3e88db)
 ![Screenshot (728)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/f2742e45-a71c-43f9-be82-bc028bcc2a54)
 
 Selanjutnya menu data hewan, admin juga dapat menginput dan mengedit data hewan sesuai dengan sub informasi yang tertera pada tabel seperti nama, deskripsi, dan harga.
