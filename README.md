@@ -71,13 +71,17 @@ Selanjutnya menu data hewan pada akun manager yang berisikan kolom nama, descrip
  ![login user](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/b1746fe0-37bb-4e09-8010-98dfe5a03c53)
  
  ## Dashboard User
-Pada tampilan dashboard user terdapat tampilan jumlah total pengguna, pemesanan, transaksi, dan total pendapatan. Sedangkan menu yang ada pada akun user terdapat data list data hewan dan market yang berisi pemesanan dan transaksi. 
+Pada tampilan dashboard user terdapat tabel jumlah total pengguna, pemesanan, transaksi, dan total pendapatan. Sedangkan menu yang ada pada akun user terdapat data list data hewan dan market yang berisi pemesanan dan transaksi. 
+ ![login user](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/88a86851-c74b-42d1-b5ca-9cf3306ce7f1)
  ![dashboard user](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/212b2459-d5e8-4018-a9a0-c33d4412a8fa)
 
- Pada menu data hewan, user dapat menginput dan mengedit data pegawai sesuai dengan sub informasi yang telah tertera pada tabel seperti nama, description, dan harga hewan yang akan dipesan.
+ Pada menu data hewan, user hanya dapat melihat tabel sub informasi yang telah tertera pada tabel seperti nama, description, dan harga hewan yang akan dipesan. Berikut tampilannya :
  ![menu user - data hewan](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e0b2eb50-6b31-4902-904f-4fa7253d002a)
 
  Selanjutnya menu datalist pemesanan, user hanya dapat melihat tabel kolom yang berisikan nama customer, hewan, jumlah hewan, tanggal dan waktu, serta status. Berikut tampilannya :
  ![menu user - data pemesanan](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e21615e5-3d34-4be3-b3ed-f527a9564e6e)
 
- 
+Menu terakhir yaitu datalist transaksi user. Terdapat tabel yang berisikan nama user, nomor nota, biaya, extra biaya (apabila terdapat biaya tambahan), dan total biaya. Berikut tampilannya :
+![menu user - data transaksi](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/c8813bdc-3cbe-4274-b864-f1d6c63d8941)
+
+Itu dia tutorial dari website kami yaitu Agrotechfarm, sekian terimakasih.
