@@ -26,21 +26,21 @@
   Pada tampilan awal  website  terdapat halaman login, baik dari akun admin, user, dan manager. Apabila memilih login dengan akun admin lalu berhasil, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard admin.
 ![Screenshot (730)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1d721f8b-91f2-4c65-b8b0-410e0ea6c883)
 
-## Menu Pegawai
+## Menu Admin
   Pada dashboard admin terdapat beberapa bagian menu yaitu data list pegawai dan data hewan, lalu terdapat market yang berisikan data antrian, transaksi, dan pengaduan.
 ![Screenshot (740)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/4a35e0e6-8b16-4026-b123-fd1fd734d099)
 
- Pada menu pegawai, admin dapat menginput dan mengedit data pegawai sesuai dengan sub informasi yang telah tertera pada tabel seperti  username, nama, jenis kelamin, alamat, no hp, dan status.
+ Pada menu pegawai, admin dapat menginput, mengedit, dan menghapus data pegawai sesuai dengan sub informasi yang telah tertera pada tabel seperti  username, nama, jenis kelamin, alamat, no hp, dan status.
 ![Screenshot (734)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/cf330e8a-2212-49eb-a896-dcd6d56a11bb)
 ![Screenshot (728)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/f2742e45-a71c-43f9-be82-bc028bcc2a54)
 
-Selanjutnya menu data hewan, admin juga dapat menginput dan mengedit data hewan sesuai dengan sub informasi yang tertera pada tabel seperti nama, deskripsi, dan harga.
+Selanjutnya menu data hewan, admin juga dapat menginput, mengedit, dan menghapus data hewan sesuai dengan sub informasi yang tertera pada tabel seperti nama, deskripsi, dan harga.
 ![Screenshot (741)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/13a8e70c-ab2b-43c7-b317-65b09ffbf3a5)
 
-Pada menu pemesanan, adminpun dapat menginput dan mengedit data pemesanan hewan sesuai dengan sub informasi yang tertera pada tabel seperti nama customer, nama hewan yang dipesan, tanggal & waktu pemesanan, dan status.   
+Pada menu pemesanan, adminpun dapat menginput,  mengedit, dan menghapus data pemesanan hewan sesuai dengan sub informasi yang tertera pada tabel seperti nama customer, nama hewan yang dipesan, tanggal & waktu pemesanan, dan status.   
 ![Screenshot (742)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/7f733ad3-6178-4212-a003-258467c96749)
 
-Sama seperti menu sebelumnya, pada menu pengaduan pesan customer berisikan list pesan customer. Mulai dari nama, email, no hp, dan isi pesan yang dingin disampaikan.
+Sama seperti menu sebelumnya, admin dapat menginput,  mengedit, dan menghapus data. Pada menu data transaksi berisikan list pesanan customer. Mulai dari nama user, nomor nota, biaya, extra biaya dan total yang akan dibayar user.
 ![Screenshot (745)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/f746fa1a-4ece-4eb4-94a9-8cb319568768)
 =======
 2. Manager
