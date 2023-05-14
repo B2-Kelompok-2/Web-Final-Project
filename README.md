@@ -42,7 +42,6 @@ Pada menu pemesanan, adminpun dapat menginput,  mengedit, dan menghapus data pem
 
 Sama seperti menu sebelumnya, admin dapat menginput,  mengedit, dan menghapus data. Pada menu data transaksi berisikan list pesanan customer. Mulai dari nama user, nomor nota, biaya, extra biaya dan total yang akan dibayar user.
 ![Screenshot (745)](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/f746fa1a-4ece-4eb4-94a9-8cb319568768)
-=======
 2. Manager
 (username	: user , password	: user ) 
 
