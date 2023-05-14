@@ -11,7 +11,6 @@
 1. Admin 
 (username	: admin, password	: admin)
 
-<<<<<<< HEAD
 2. User
 (username	: , password	: )
 
