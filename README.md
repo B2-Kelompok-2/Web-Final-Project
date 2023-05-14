@@ -62,6 +62,10 @@ Pada tampilan dashboard manager terdapat tampilan jumlah total pengguna, pemesan
 ![menu user - tambah pegawai](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e2234ae0-a011-45d3-854e-11ee83c6af31)
 ![menu manager - update pegawai](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/a47467ed-5419-4997-9801-c34e1b004515)
 
+Selanjutnya menu data hewan pada akun manager yang berisikan kolom nama, description, dan harga hewan. Berikut tampilannya :
+![menu manager - data hewan](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/5e909cb1-d860-4c8d-870d-483ece43a5f9)
+![menu manager - tambah hewan](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1abb3912-b3d5-439a-8a0f-a7a401b8beb3)
+![menu manager - update hewan](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/37b13a3f-b937-4294-96d4-e787468aa3c1)
 
 
  
