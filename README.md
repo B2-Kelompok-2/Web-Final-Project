@@ -45,9 +45,9 @@ Pada menu data pemesanan, adminpun dapat menginput dan mengedit data pemesanan h
 
 Sama seperti menu sebelumnya, admin dapat menginput, mengedit, serta menghapus data transaksi. Pada menu transaksi ini berisikan list pesanan customer. Mulai dari nama user, nomor nota, biaya, extra biaya dan total yang akan dibayar. Berikut tampilannya :
 ![menu transaksi](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/1aea0d89-ebd9-4ad3-98ca-46718a25d403)
+![tambah transaksi](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e60d846e-86e3-484f-9968-84dbd2f2efc4)
 ![nota pembayaran](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/fd0ca725-f084-41dd-bdc7-b75e4e51ecef)
 ![print nota pembayaran](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/9fed65f5-1831-4b16-bbc2-0f500ae09ca0)
-![tambah transaksi](https://github.com/B2-Kelompok-2/Web-Final-Project/assets/82164104/e60d846e-86e3-484f-9968-84dbd2f2efc4)
 
 ## Login Manager
   Pada tampilan awal  website, kita masuk sebagai manager. Apabila telah berhasil masuk, maka akan muncul pemberitahuan “Berhasil login” dan tampilan website akan masuk ke dashboard manager. Berikut tampilannya :
